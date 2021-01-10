@@ -42,7 +42,7 @@ public class TeacherRestContoller {
 	}
 	
 	@DeleteMapping("/teachers/{teacherId}")
-	public String deleteStudent(@PathVariable int id) {
+	public String deleteTeacher(@PathVariable int id) {
 		Teacher theTeacher=teacherDAO.getTeacher(id);
 		if(theTeacher==null) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "teacher not found");   
@@ -51,7 +51,7 @@ public class TeacherRestContoller {
 		return "Deleted teacher with id "+id;
 	}
 	
-	public Teacher updateTeachert(@RequestBody Teacher teacher) {
+	public Teacher updateTeacher(@RequestBody Teacher teacher) {
 		teacherDAO.updateTeacher(teacher);
 		return teacher;
 		
