@@ -32,9 +32,6 @@ public class Student {
 	@Column(name="points")
 	private int points;
 	
-	@ManyToOne(cascade= {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
-	@JoinColumn(name="teacher_id")
-	private Teacher teacher;
 
 	public Student() {
 	
@@ -46,7 +43,6 @@ public class Student {
 		this.lastname = lastname;
 		this.email = email;
 		this.points = points;
-		this.teacher = teacher;
 	}
 
 	public int getId() {
@@ -89,19 +85,13 @@ public class Student {
 		this.points = points;
 	}
 
-	public Teacher getTeacher() {
-		return teacher;
-	}
-
-	public void setTeacher(Teacher teacher) {
-		this.teacher = teacher;
-	}
-
 	@Override
 	public String toString() {
 		return "Student [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email
-				+ ", points=" + points + ", teacher=" + teacher + "]";
+				+ ", points=" + points + "]";
 	}
+
+	
 	
 	
 	

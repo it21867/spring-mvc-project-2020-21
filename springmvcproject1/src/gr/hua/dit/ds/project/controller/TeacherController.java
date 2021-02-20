@@ -28,8 +28,8 @@ public class TeacherController {
 		return "teacher-list";
 	}
 	
-	@RequestMapping("/teacher/{teacherId}")
-	public String getTeacher(@PathVariable int id,Model model) {
+	@RequestMapping("/teacher")
+	public String getTeacher(@RequestParam int id,Model model) {
 		Teacher teacher=teacherDAO.getTeacher(id);
 		if(teacher==null) {
 			 throw new ResponseStatusException(HttpStatus.NOT_FOUND, "teacher not found");   
@@ -51,8 +51,8 @@ public class TeacherController {
 		return  "redirect:/teachers/list";
 	}
 	
-	@RequestMapping("/updateTeacher/{teacherId}")
-	public String updateTeacher(@PathVariable int id,@PathVariable String firstname,@PathVariable String lastname,@PathVariable String email,@PathVariable String course,Model model) {
+	@RequestMapping("/updateTeacher")
+	public String updateTeacher(@RequestParam int id,@RequestParam String firstname,@RequestParam String lastname,@RequestParam String email,@RequestParam String course,Model model) {
 		Teacher teacher=teacherDAO.getTeacher(id);
 		if(teacher==null) {
 			 throw new ResponseStatusException(HttpStatus.NOT_FOUND, "teacher not found");   
@@ -61,14 +61,14 @@ public class TeacherController {
 		teacher.setLastname(lastname);
 		teacher.setEmail(email);
 		teacher.setCourse(course);
-		teacherDAO.saveTeacher(teacher);
+		teacherDAO.updateTeacher(teacher);;
 		
 		model.addAttribute("teacher",teacher);
 		return "redirect:/teachers/list";
 	}
 	
-	@RequestMapping("/deleteTeacher/{teacherId}")
-	public String deleteTeacher(@PathVariable int id) {
+	@RequestMapping("/deleteTeacher")
+	public String deleteTeacher(@RequestParam int id) {
 		Teacher teacher=teacherDAO.getTeacher(id);
 		if(teacher==null) {
 			 throw new ResponseStatusException(HttpStatus.NOT_FOUND, "teacher not found");   

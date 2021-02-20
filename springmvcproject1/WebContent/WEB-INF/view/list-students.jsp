@@ -23,7 +23,6 @@
 <td>${tempStudent.lastname}</td>
 <td>${tempStudent.email}</td>
 <td>${tempStudent.points}</td>
-<td>${tempStudent.teacher}</td>
 </tr>
 </c:forEach>
 </table>

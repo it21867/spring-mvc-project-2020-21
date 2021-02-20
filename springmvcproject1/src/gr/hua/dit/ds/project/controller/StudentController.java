@@ -29,8 +29,8 @@ public class StudentController {
 		return "list-students";
 	}
 	
-	@RequestMapping("/student/{studentId}")
-	public String getStudent(@PathVariable int id,Model model) {
+	@RequestMapping("/student")
+	public String getStudent(@RequestParam int id,Model model) {
 		Student student=studentDAO.getStudent(id);
 		if(student==null) {
 			 throw new ResponseStatusException(HttpStatus.NOT_FOUND, "student not found");   
@@ -40,13 +40,12 @@ public class StudentController {
 	}
 	
 	@RequestMapping("/saveStudent")
-	public String addStudent(@RequestParam String firstname,@RequestParam String lastname,@RequestParam String email,@RequestParam int points,@RequestParam Teacher teacher,Model model ) {
+	public String addStudent(@RequestParam String firstname,@RequestParam String lastname,@RequestParam String email,@RequestParam int points,Model model ) {
 		Student newStudent=new Student();
 		newStudent.setFirstname(firstname);
 		newStudent.setLastname(lastname);
 		newStudent.setEmail(email);
 		newStudent.setPoints(points);
-		newStudent.setTeacher(teacher);
 		studentDAO.saveStudent(newStudent);
 		
 		model.addAttribute("student", newStudent);
@@ -54,8 +53,8 @@ public class StudentController {
 		
 	}
 	
-	@RequestMapping("/updateStudent/{studentId}")
-	public String updateStudent(@PathVariable int id,@PathVariable String firstname,@PathVariable String lastname,@PathVariable String email,@PathVariable int points,@PathVariable Teacher teacher,Model model) {
+	@RequestMapping("/updateStudent")
+	public String updateStudent(@RequestParam int id,@RequestParam String firstname,@RequestParam String lastname,@RequestParam String email,@RequestParam int points,Model model) {
 		Student student=studentDAO.getStudent(id);
 		if(student==null) {
 			 throw new ResponseStatusException(HttpStatus.NOT_FOUND, "student not found");   
@@ -64,15 +63,14 @@ public class StudentController {
 		student.setLastname(lastname);
 		student.setEmail(email);
 		student.setPoints(points);
-		student.setTeacher(teacher);
-		studentDAO.saveStudent(student);
+		studentDAO.updateStudent(student);
 		
 		model.addAttribute("student",student);
 		return "redirect:/students/list";	
 	}
 	
-	@RequestMapping("/deleteStudent/{studentId}")
-	public String deleteStudent(@PathVariable int id) {
+	@RequestMapping("/deleteStudent")
+	public String deleteStudent(@RequestParam int id) {
 		Student student=studentDAO.getStudent(id);
 		if(student==null) {
 			 throw new ResponseStatusException(HttpStatus.NOT_FOUND, "student not found");   

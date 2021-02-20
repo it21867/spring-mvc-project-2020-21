@@ -22,7 +22,7 @@ public class TeacherDAOImpl implements TeacherDAO {
 	@Transactional
 	public Teacher getTeacher(int id) {
 		Session currentSession =sessionfactory.getCurrentSession();
-		Query<Teacher>query = currentSession.createQuery("from teacher Where id="+id,Teacher.class);
+		Query<Teacher>query = currentSession.createQuery("from Teacher Where id="+id,Teacher.class);
 		Teacher teacher=query.getSingleResult();
 		return teacher;
 	}
@@ -31,7 +31,7 @@ public class TeacherDAOImpl implements TeacherDAO {
 	@Transactional
 	public List<Teacher> getTeachers() {
 		Session currentSession =sessionfactory.getCurrentSession();
-		Query<Teacher>query = currentSession.createQuery("from teacher", Teacher.class);
+		Query<Teacher>query = currentSession.createQuery("from Teacher", Teacher.class);
 		List<Teacher> teachers=query.getResultList();
 		return teachers;
 	}

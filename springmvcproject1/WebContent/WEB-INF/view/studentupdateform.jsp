@@ -13,7 +13,6 @@ First name<input type="text" name="firstname"><br>
 Last name<input type="text" name="lastname"><br>
 Email<input type="text" name="email"><br>
 Points<input type="number" name="points"><br>
-Teacher Id<input type="number" name="tid"><br>
 <input type="submit" value="Update student"><br>
 </form>
 </body>

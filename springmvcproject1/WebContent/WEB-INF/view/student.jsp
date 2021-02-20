@@ -13,6 +13,5 @@ First name:${student.firstname}<br>
 Last name:${student.lastname}<br>
 Email:${student.email}<br>
 Points:${student.points}<br>
-Teacher id:${student.teacher}<br>
 </body>
 </html>

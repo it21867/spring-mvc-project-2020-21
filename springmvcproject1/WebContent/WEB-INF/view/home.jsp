@@ -16,11 +16,11 @@
 <a href="http://localhost:8080/springmvcproject1/studentsearchForm">Search student</a><br>
 </div>
 <div>
-<a href="http://localhost:8080/springmvcproject1/teacheraddForm">Add Teacher</a>
-<a href="http://localhost:8080/springmvcproject1/teacherupdateForm">Update Teacher</a>
-<a href="http://localhost:8080/springmvcproject1/teacherdeleteForm">Delete Teacher</a>
-<a href="http://localhost:8080/springmvcproject1/teachers/list">Teacher List</a>
-<a href="http://localhost:8080/springmvcproject1/teachersearchForm">Search Teacher</a>
+<a href="http://localhost:8080/springmvcproject1/teacheraddForm">Add Teacher</a><br>
+<a href="http://localhost:8080/springmvcproject1/teacherupdateForm">Update Teacher</a><br>
+<a href="http://localhost:8080/springmvcproject1/teacherdeleteForm">Delete Teacher</a><br>
+<a href="http://localhost:8080/springmvcproject1/teachers/list">Teacher List</a><br>
+<a href="http://localhost:8080/springmvcproject1/teachersearchForm">Search Teacher</a><br>
 </div>
 </body>
 </html>

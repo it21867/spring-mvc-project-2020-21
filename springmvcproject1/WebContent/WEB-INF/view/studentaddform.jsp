@@ -8,12 +8,11 @@
 </head>
 <body>
 <h2>Add new student</h2><br>
-<form action="http://localhost:8080/springmvcproject1/students/saveStudent" method="POST">
+<form action="http://localhost:8080/springmvcproject1/students/saveStudent" method="post">
 First name<input type="text" name="firstname"><br>
 Last name<input type="text" name="lastname"><br>
 Email<input type="text" name="email"><br>
 Points<input type="number" name="points"><br>
-Teacher Id<input type="number" name="tid"><br>
 <input type="submit" value="Add student"><br>
 </form>
 

@@ -22,7 +22,7 @@ public class StudentDAOImpl implements StudentDAO {
 	@Transactional
 	public Student getStudent(int id) {
 		Session currentSession =sessionfactory.getCurrentSession();
-		Query<Student>query = currentSession.createQuery("from student Where id="+id,Student.class);
+		Query<Student>query = currentSession.createQuery("from Student Where id="+id,Student.class);
 		Student student=query.getSingleResult();
 		return student;
 	}
@@ -31,7 +31,7 @@ public class StudentDAOImpl implements StudentDAO {
 	@Transactional
 	public List<Student> getStudents() {
 		Session currentSession =sessionfactory.getCurrentSession();
-		Query<Student>query = currentSession.createQuery("from student", Student.class);
+		Query<Student>query = currentSession.createQuery("from Student", Student.class);
 		List<Student> students=query.getResultList();
 		return students;
 	}
