@@ -14,7 +14,7 @@ Last name<input type="text" name="lastname"><br>
 Email<input type="text" name="email"><br>
 Course<input type="text" name="course">
 
-<input type="submit" value="Update student"><br>
+<input type="submit" value="Update teacher"><br>
 </form>
 </body>
 </html>

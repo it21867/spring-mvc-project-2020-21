@@ -15,7 +15,6 @@
 <th>Last Name</th>
 <th>Email</th>
 <th>Points</th>
-<th>Teacher id</th>
 </tr>
 <c:forEach var="tempStudent" items="${students}">
 <tr>
